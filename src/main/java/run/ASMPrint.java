@@ -1,6 +1,7 @@
 package run;
 
 import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.util.ASMifier;
 import org.objectweb.asm.util.Printer;
 import org.objectweb.asm.util.Textifier;
@@ -23,9 +24,10 @@ import java.io.PrintWriter;
 public class ASMPrint {
     public static void main(String[] args) throws IOException {
         // (1) 设置参数
-        String className = "sample.HelloWorld";
+        String className = "sample.Hello";
         int parsingOptions = ClassReader.SKIP_FRAMES | ClassReader.SKIP_DEBUG;
         boolean asmCode = true;
+
 
         // (2) 打印结果
         Printer printer = asmCode ? new ASMifier() : new Textifier();
